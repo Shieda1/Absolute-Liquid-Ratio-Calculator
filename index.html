@@ -5,44 +5,172 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Absolute Liquid Ratio Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+  <!-- Unicons CSS -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- radio -->
-  <input type="radio" id="absoluteLiquidRatioRadio" name="variables" checked>
-  <label for="absoluteLiquidRatioRadio">Absolute Liquid Ratio</label>
 
-  <input type="radio" id="absoluteLiquidAssetsRadio" name="variables">
-  <label for="absoluteLiquidAssetsRadio">Absolute Liquid Assets</label>
+  <div class="scrollTop">
+    <i class="fa fa-caret-up" aria-hidden="true"></i>
+  </div>
 
-  <input type="radio" id="currentLiabilitiesRadio" name="variables">
-  <label for="currentLiabilitiesRadio">Current Liabilities</label><br><br>
+  <!-- header -->
+  
+  <nav class="nav">
+    <i class="uil uil-bars navOpenBtn"></i>
+    
+
+    <ul class="nav-links">
+      <i class="uil uil-times navCloseBtn"></i>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Products</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+
+    <a href="#" class="logo">CodingLab</a>
+
+    <i class="uil uil-search search-icon" id="searchIcon"></i>
+    <div class="search-box">
+      <i class="uil uil-search search-icon"></i>
+      <input type="text" placeholder="Search here..." />
+    </div>
+  </nav>
+
+  <!-- end header -->
+<div class="text-calculator-container">
+  <!-- calculator -->
+  
+  <div class="calculator-container">
+    <div id="calculator">
+
+    <!-- radio -->
+
+    <div id="radio">
+      <div class="double-radios">
+        <label><input type="radio" id="absoluteLiquidRatioRadio" checked name="variables">Absolute Liquid Ratio</label>
+        <label><input type="radio" id="absoluteLiquidAssetsRadio" name="variables">Absolute Liquid Assets</label>
+      </div>
+        <div class="single-radio">
+          <label><input type="radio" id="currentLiabilitiesRadio" name="variables">Current Liabilities</label>
+        </div>
+    </div>
+
   <!-- end radio -->
-  
-  <label for="v1" id="variable1">Absolute Liquid Assets</label>
-  <input type="number" id="v1"><br><br>
-  
-  <label for="v2" id="variable2">Current Liabilities</label>
-  <input type="number" id="v2"><br><br>
 
-  <button id="btn">compute</button>
+      <div class="inputs">
+        <input id="v1" class="numbers-input first-input" ><label for="v1" id="variable1">Absolute Liquid Assets</label><br>
+        
+        <input id="v2" class="numbers-input last-input"><label for="v2" id="variable2">Current Liabilities</label><br><br>
+      </div>
+      <div class="buttons">
+        <button id="btn1" class="result-buttons">compute</button>
+        <button id="btn2" class="result-buttons">reset</button>
+      </div>
+      
+      <p id="result"></p>
 
-  <p id="result"></p>
-  <p>
-    Insert the information in the form and the calculator will determine the absolute liquid ratio<br> 
-    What is the absolute liquid ratio?<br>
-    The absolute liquid ratio is a ratio that measures the total liquidity that is available to the company. It considers the cash available to the firm and the marketable securities?<br>
-    How to calculate absolute liquid ratio?<br>
-    To calculate absolute liquid ratio you should use the following formula:<br>
-    absolute liquid ratio = absolute liquid assets / current liabilities<br>
-    example: company x has $2,050 worth of absolute liquid assets and it also has $7,960, calculate the absolute liquid ratio?<br>
-    Using the absolute liquid ratio formula the asnwer will be:<br>
+    </div>
+  </div>
+
+  <!-- end calculator -->
+
+  <!-- text -->
+<div class="text">
+  <h4>Insert the information in the form and the calculator will determine the absolute liquid ratio.</h4><br> 
+    <h3>What is the absolute liquid ratio?</h3><br>
+    <p>The absolute liquid ratio is a ratio that measures the total liquidity that is available to the company. It considers the cash available to the firm and the marketable securities.</p><br>
+    <h3>How to calculate absolute liquid ratio?</h3><br>
+    <p>To calculate absolute liquid ratio you should use the following formula:<br>
+    absolute liquid ratio = absolute liquid assets / current liabilities</p><br>
+    <h4>example: company x has $2,050 worth of absolute liquid assets and it also has $7,960, calculate the absolute liquid ratio?</h4><br>
+   <p>Using the absolute liquid ratio formula the asnwer will be:<br><br>
     absolute liquid ratio = absolute liquid assets / current liabilities<br>
     absolute liquid ratio = $2,050 / $7,960<br>
-    absolute liquid ratio = 0.25<br>
-    Why use absolute liquid ratio?<br>
-    The absolute liquid ratio is used to measure the liquidity available for the frim because it determines how ease the company can pay it's short term liabilities.<br>
-  </p>
+    absolute liquid ratio = 0.25</p><br>
+    <h3>Why use absolute liquid ratio?</h3><br>
+    <p>The absolute liquid ratio is used to measure the liquidity available for the frim because it determines how ease the company can pay it's short term liabilities.</p><br>
+  </div>
+  <!-- end text-->
+</div>
+
+<!-- calculators cards -->
+
+<section id="other-calculators">
+  <div class="title">
+      <h1>Other people also used:</h1>
+  </div>
+  <div class="wrapper">
+      <div class="double-calculators">
+          <a href="#">
+              <div class="single-calculator">
+                  <span></span>
+                  <h3>UX/UI Design</h3>
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, qui aspernatur perferendis voluptate, placeat repellat odit et, molestiae quod iusto minus! Doloremque.</p>
+              </div>
+          </a>
+          <a href="#">
+              <div class="single-calculator">
+                  <span></span>
+                  <h3>Responsive Design</h3>
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum repudiandae quaerat nemo facere at similique non illo vitae, officiis, soluta, corrupti recusandae hic.</p>
+              </div>
+          </a>
+      </div>
+      <div class="double-calculators">
+          <a href="#">
+              <div class="single-calculator">
+                  <span></span>
+                  <h3>html, css</h3>
+                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores molestias repellendus ut laudantium repudiandae est deleniti tempore sapiente consequatur dolores.</p>
+              </div>
+          </a>
+          <a href="#">
+              <div class="single-calculator">
+                  <span></span>
+                  <h3>html, css</h3>
+                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores molestias repellendus ut laudantium repudiandae est deleniti tempore sapiente consequatur dolores.</p>
+              </div>
+          </a>
+      </div>
+  </div>
+</section>
+
+<!-- end calculators cards -->
+
+  <!-- footer -->
+
+  <footer>
+    <h1>logo</h1>
+    <div class="footer-container">
+      <div class="footer-link">
+        <a href="#">other accounting calculators</a>
+      </div>
+      <div class="footer-aboutus">
+        <h2>ABOUT US</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero cum doloribus ipsum similique eius magni veritatis quae soluta nemo possimus quaerat, recusandae ab ut deserunt quasi, quia exercitationem voluptate optio.</p>
+      </div>
+      <div class="footer-contactus">
+        <h2>CONTACT US</h2>
+        <div class="gmail">
+          <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+          <p><a href="something@gmail.com">something@gmail.com</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="copyrightText">
+    <p>Copyright @ 2024 Online Calculators. All Rights Reserved.</p>
+  </div>
+  <!-- end footer -->
+
+  
   <script src="app.js"></script>
 </body>
 </html>

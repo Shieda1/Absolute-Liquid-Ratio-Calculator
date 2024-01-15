@@ -3,7 +3,8 @@
 const v1 =  document.getElementById('v1');
 const v2 = document.getElementById('v2');
 const v3 = document.getElementById('v3');
-const btn = document.getElementById('btn');
+const btn1 = document.getElementById('btn1');
+const btn2 = document.getElementById('btn2');
 const result = document.getElementById('result');
 
 // radio buttons
@@ -43,16 +44,35 @@ currentLiabilitiesRadio.addEventListener('click', function() {
   result.textContent = '';
 });
 
-btn.addEventListener('click', function() {
+btn1.addEventListener('click', function() {
   
-  if(absoluteLiquidRatioRadio.checked)
-    result.textContent = `Absolute Liquid Ratio = ${computeAbsoluteLiquidRatio().toFixed(2)}`;
+  if(absoluteLiquidRatioRadio.checked) {
+    if(isNaN(computeAbsoluteLiquidRatio()))
+      result.textContent = "wrong input";
+    else
+      result.textContent = `Absolute Liquid Ratio = ${computeAbsoluteLiquidRatio().toFixed(2)}`;
+  }
 
-  else if(absoluteLiquidAssetsRadio.checked)
-    result.textContent = `Absolute Liquid Assets = ${computeAbsoluteLiquidAssets().toFixed(2)}`;
+  else if(absoluteLiquidAssetsRadio.checked) {
+    if(isNaN(computeAbsoluteLiquidAssets()))
+      result.textContent = "wrong input";
+    else
+      result.textContent = `Absolute Liquid Assets = ${computeAbsoluteLiquidAssets().toFixed(2)}`;
+  }
+    
 
-  else if(currentLiabilitiesRadio.checked)
-    result.textContent = `Current Liabilities = ${computeCurrentLiabilities().toFixed(2)}`;
+  else if(currentLiabilitiesRadio.checked) {
+    if(isNaN(computeCurrentLiabilities()))
+      result.textContent = "wrong input";
+    else
+      result.textContent = `Current Liabilities = ${computeCurrentLiabilities().toFixed(2)}`;
+  }
+})
+
+btn2.addEventListener('click', function() {
+  
+  v1.value = '';
+  v2.value = '';
 })
 
 // calculation
@@ -68,3 +88,47 @@ function computeAbsoluteLiquidAssets() {
 function computeCurrentLiabilities() {
   return Number(absoluteLiquidAssets.value) / Number(absoluteLiquidRatio.value);
 }
+
+// design
+
+const nav = document.querySelector(".nav"),
+  searchIcon = document.querySelector("#searchIcon"),
+  navOpenBtn = document.querySelector(".navOpenBtn"),
+  navCloseBtn = document.querySelector(".navCloseBtn");
+
+searchIcon.addEventListener("click", () => {
+  nav.classList.toggle("openSearch");
+  nav.classList.remove("openNav");
+  if (nav.classList.contains("openSearch")) {
+    return searchIcon.classList.replace("uil-search", "uil-times");
+  }
+  searchIcon.classList.replace("uil-times", "uil-search");
+});
+
+navOpenBtn.addEventListener("click", () => {
+  nav.classList.add("openNav");
+  nav.classList.remove("openSearch");
+  searchIcon.classList.replace("uil-times", "uil-search");
+});
+navCloseBtn.addEventListener("click", () => {
+  nav.classList.remove("openNav");
+});
+
+// progress
+
+var scroll = this.document.querySelector('.scrollTop');
+
+window.addEventListener('scroll', function() {
+  scroll.classList.toggle('active', window.scrollY > 150)
+
+  
+})
+
+scroll.addEventListener('click', function () {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  })
+})
+
+// end progress
